@@ -1,13 +1,18 @@
+require('dotenv').config()
+
 const { Kafka, logLevel } = require('kafkajs');
+
+console.log( process.env.CONFLUENT_API_KEY)
+console.log( process.env.CONFLUENT_API_SECRET)
 
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: ['pkc-921jm.us-east-2.aws.confluent.cloud:443'], // Use your cluster endpoint
+  brokers: ['pkc-921jm.us-east-2.aws.confluent.cloud:9092'], // Use your cluster endpoint
   ssl: true,
   sasl: {
     mechanism: 'plain', // Confluent Cloud uses 'plain'
-    username: 'HT63BUVIIMC2QNBL', // Your API key
-    password: 'cflt1M62Kme8IBSv4qP6Aenl8coeqM1yRzfv60ETLn5f8a50rwPLE9/Av1JaUY5Q', // Your API secret
+    username: process.env.CONFLUENT_API_KEY, 
+    password:  process.env.CONFLUENT_API_SECRET
   },
   logLevel: logLevel.INFO,
 });
