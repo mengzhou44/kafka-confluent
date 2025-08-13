@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "start:local": "node index-local.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@confluentinc/kafka-javascript": "^1.4.0",
     "kafkajs": "^2.2.4"
   }
 }
