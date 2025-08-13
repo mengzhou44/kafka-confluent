@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@confluentinc/kafka-javascript": "^1.4.0",
+    "dotenv": "^17.2.1",
     "kafkajs": "^2.2.4"
   }
 }
